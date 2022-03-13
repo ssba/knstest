@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="site1.opencart" id="7ac13b31-9741-436b-b867-5ccd53c63aa6" name="Unnamed" use_path_mappings="true" />
+    </servers>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7" />
+</project>
