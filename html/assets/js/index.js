@@ -9,6 +9,12 @@ if(session){
 
 $(document).ready(function () {
 
+    var checkedValue = $('#remember:checked').val();
+    if(checkedValue){
+        checkedValue = true;
+    }else{
+        checkedValue = false;
+    }
 
     $("#login").submit(function (event) {
         $("#error").hide();
@@ -28,9 +34,12 @@ $(document).ready(function () {
             if(data.response){
                 SetSession(data.response.token);
             }
-            if($("#remember").val()){
+
+            var checkedValue = $('#remember:checked').val();
+            if(checkedValue){
                 $.cookie('session', data.response.token, { expires: 1 });
             }
+
             window.location.replace("/list.html");
         }).fail(function (data) {
             console.log(data);

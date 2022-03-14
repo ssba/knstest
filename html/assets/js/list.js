@@ -10,6 +10,14 @@ if(sessionCookie){
     SetSession(sessionCookie);
 }
 
+var session = GetSession();
+if(session){
+    localStorage.removeItem('session');
+}else{
+    window.location.replace("/");
+}
+
+
 $(document).ready(function () {
     GetData(currentPage,pageSize);
 });
@@ -39,11 +47,7 @@ function GetData(page, count) {
         count: count,
     };
 
-    var session = GetSession();
 
-    if(!session){
-        window.location.replace("/");
-    }
 
     $.ajax({
         type: "GET",
@@ -126,7 +130,6 @@ function logout() {
         dataType: "json",
         encode: true,
     }).done(function (data) {
-        localStorage.removeItem('session');
         $.removeCookie('session');
         window.location.replace("/");
     }).fail(function (data) {
