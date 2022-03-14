@@ -146,7 +146,13 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 40px;
+  padding: 3px;
+}
+
+.list-group-item, .item-detail-ok {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .list-group-item:nth-child(even) {
@@ -209,6 +215,14 @@ ul {
 
 .pagination a.active {
   border-bottom: 1px solid #E98C3B;
+}
+
+.error {
+  height: 30px;
+  background: red;
+  margin: 10px 10px;
+  color: white;
+  padding: 5px;
 }
 
 @media screen and (max-width: 900px){

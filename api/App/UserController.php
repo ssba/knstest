@@ -23,7 +23,7 @@ class UserController
     public function getListPaginated(int $page = 1, int $count = 5)
     {
         Auth::auth();
-        $students = DB::queryAll( sprintf("SELECT * FROM `students` LIMIT %s OFFSET %s", $count, ($page - 1) * $count));
+        $students = DB::queryAll( sprintf("SELECT `students`.*, `api_users`.`username` FROM `students`, `api_users` WHERE `students`.`api_user_id` = `api_users`.`id` LIMIT %s OFFSET %s", $count, ($page - 1) * $count));
         $total = DB::query( "SELECT COUNT(*) as c FROM `students`");
         return [
             "code" => 200,
