@@ -3,7 +3,7 @@ var Items = [];
 var currentPage = 1;
 var pageSize = 5;
 
-var URL = "http://site1.opencart";
+var URL = "ENDPOINT";
 
 var sessionCookie = $.cookie('session');
 if(sessionCookie){

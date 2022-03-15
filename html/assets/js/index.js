@@ -1,5 +1,5 @@
 
-var URL = "http://site1.opencart";
+var URL = "ENDPOINT";
 
 var session = $.cookie('session');
 if(session){
